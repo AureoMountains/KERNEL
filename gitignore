@@ -1,0 +1,17 @@
+build/
+
+*.bin
+*.elf
+*.o
+
+*.iso
+*.img
+
+*.log
+*.tmp
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
