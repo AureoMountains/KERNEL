@@ -2,6 +2,12 @@
 
 #include <stdint.h>
 
+void kernel_main(void)
+{
+    initialize_bss();
+
+    vga_initialize();
+
 extern uint32_t __bss_start;
 extern uint32_t __bss_end;
 
@@ -48,4 +54,4 @@ void kernel_main(void)
     vga_set_color(7, 0);
 
     cpu_halt();
-}
+} }
