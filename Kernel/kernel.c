@@ -2,6 +2,20 @@
 
 #include <stdint.h>
 
+extern uint32_t __bss_start;
+extern uint32_t __bss_end;
+
+static void initialize_bss(void)
+{
+    uint32_t *current = &__bss_start;
+    uint32_t *end = &__bss_end;
+
+    while (current < end)
+    {
+        *current++ = 0;
+    }
+}
+
 static void cpu_halt(void)
 {
     for (;;)
